@@ -12,7 +12,9 @@ export const usersReducer = (state: InitStateType = initState, action: ActionsTy
   switch (action.type) {    
     case 'CREATE_USER':
       return {
-        users: [...state.users, action] as UserType[],
+        ...state,
+        // users: [...state.users, {id: action.payload.id, name: action.payload.name}],
+        users: [...state.users, action.payload],
       };
     default:
       return state;

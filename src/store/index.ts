@@ -17,8 +17,9 @@ const rootReducers = combineReducers({
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 export const store: Store<RootStoreType> = createStore(rootReducers, composeEnhancers());
 
+
 export type RootStoreType = ReturnType<typeof rootReducers>
 
 //@ts-ignore
-window.store = store;
+// window.store = store;
 export type RootStateOrAny = AnyIfEmpty<FixTypeLater>;
